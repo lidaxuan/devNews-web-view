@@ -4,16 +4,19 @@
  * @Date: 2022-09-09 21:13:13
  * @FilePath: /devNews-web-view/src/layouts/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 17:06:28
+ * @LastEditTime: 2022-09-17 18:33:04
  */
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import Routers from 'src/routers/index';
 import Side from './side';
 import { Route, HashRouter, BrowserRouter } from "react-router-dom";
-import React, {Children} from "react";
-// import "../assets/style/layouts.scss";
+import { routerMenus } from 'src/routers/config';
+import React, { Children } from "react";
+import DB from '@lijixuan/dblist';
+import { log } from "console";
 const { Header, Content, Sider } = Layout;
+import _ from 'lodash';
 
 
 interface Props {
@@ -23,20 +26,21 @@ interface Props {
 
 interface State {
   fold: boolean;
+  breadcrumb: Array<any>;
 }
 
 class Layouts extends React.Component<Props, State> {
-  state = {
-    fold: false
-  };
+
   constructor(props: any) {
     super(props);
+    this.state = {
+      fold: false,
+      breadcrumb: []
+    };
     this.onChangeFoldStatus = this.onChangeFoldStatus.bind(this);
-    console.log( props);
+    this.getBreadcrumb = this.getBreadcrumb.bind(this);
   }
 
-  
-  
   private getLayoutClassName(): string {
     const name = ['app-layout-main'];
     if (this.state.fold) {
@@ -48,30 +52,50 @@ class Layouts extends React.Component<Props, State> {
     const fold = !this.state.fold;
     this.setState({ fold });
   }
+  private getBreadcrumb(): void {
+    const selectedKeys: string = window.location.hash.replace('#', '') || '';
+    let list = [];
+    for (let i = 0; i < routerMenus.length; i++) {
+      const children = [].concat(routerMenus[i].children || []);
+      if (children.length) {
+        for (let j = 0; j < children.length; j++) {
+          if (children[j].path == selectedKeys) {
+            list = [].concat(routerMenus[i] || [], children[j] || []);
+            break;
+          }
+        }
+      } else if (routerMenus[i].path == selectedKeys) {
+        list = [routerMenus[i]];
+      }
+    }
+    this.setState({
+      breadcrumb: list
+    });
+  }
+  componentDidMount(): void {
+    this.getBreadcrumb();
+  }
   render(): React.ReactElement {
+    const { breadcrumb } = this.state;
     return (
       <Layout>
         <Header className="header">
           <div className="logo" />
           李大玄
-          {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} /> */}
         </Header>
         <Layout>
           <Sider width={200} className="site-layout-background">
-            {/* <Menu
-              mode="inline"
-              defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
-              style={{ height: "100%", borderRight: 0 }}
-              items={items2}
-            /> */}
-            <Side></Side>
+            <Side getBreadcrumb={this.getBreadcrumb}></Side>
           </Sider>
           <Layout style={{ padding: "0 24px 24px" }}>
             <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item>
+              {
+                _.map(breadcrumb, item => {
+                  return (
+                    <Breadcrumb.Item>{item.name}</Breadcrumb.Item>
+                  );
+                })
+              }
             </Breadcrumb>
             <Content className="site-layout-background" style={{ padding: 24, margin: 0, minHeight: 280 }}>
               <Routers></Routers>
@@ -80,22 +104,7 @@ class Layouts extends React.Component<Props, State> {
         </Layout>
       </Layout>
     );
-    // if (this.props.children) {
-    //   return ;
-    // } else {
-    //   // 异常时
-    //   // return (<Redirect to='/404'/>);
-    //   return (<div>404</div>);
-    // }
   }
 }
 
 export default Layouts;
-
-
-
-// const App = () => (
- 
-// );
-
-// export default App;

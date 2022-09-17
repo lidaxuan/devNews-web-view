@@ -4,14 +4,12 @@
  * @Date: 2022-09-16 16:01:59
  * @FilePath: /devNews-web-view/src/layouts/router.ts
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 15:32:48
+ * @LastEditTime: 2022-09-17 17:51:18
  */
 
 import _ from 'lodash';
 import React from 'react';
-// import DB from '@fengqiaogang/dblist';
 import * as config from 'src/routers/config';
-// import safeGet from '@fengqiaogang/safe-get';
 
 export interface MenuData extends config.routerItem {
   [key: string]: any;

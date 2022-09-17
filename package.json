@@ -5,6 +5,7 @@
   "main": "src/application/bootstrap.tsx",
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@lijixuan/dblist": "^1.0.2",
     "@loadable/component": "^5.15.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",

@@ -4,7 +4,7 @@
  * @Date: 2022-09-16 16:01:01
  * @FilePath: /devNews-web-view/src/layouts/side.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 17:23:50
+ * @LastEditTime: 2022-09-17 18:29:42
  */
 
 import _ from 'lodash';
@@ -17,6 +17,8 @@ import { Route, HashRouter, BrowserRouter, useHistory, Link } from "react-router
 import { routerMenus } from 'src/routers/config';
 interface Props {
   fold?: boolean;
+  getBreadcrumb: any,
+  [key: string]: any;
 }
 interface menuData {
   selectedKeys: Array<any>,
@@ -32,6 +34,7 @@ class Sider extends React.Component<Props, any> {
   }
   onClickMenuItem = (data: any): void => {
     console.log('data', data);
+    this.props.getBreadcrumb();
   };
   private getLabel(text: string): React.ReactNode {
     return (<span className="font-14 font-black middle">{text}</span>);
@@ -44,7 +47,6 @@ class Sider extends React.Component<Props, any> {
     const icon = data.icon ? <IconFont className="font-24 middle" type={data.icon}></IconFont> : void 0; // 
     return (
       <Menu.Item onClick={() => this.onClickMenuItem(data)} icon={icon} key={data.path}>
-        {/* <span>{data.path}</span> */}
         <Link to={data.path} key={data.path}>
           {name}
         </Link>
@@ -56,7 +58,6 @@ class Sider extends React.Component<Props, any> {
       const icon = data.icon ? <IconFont className="font-24 middle" type={data.icon}></IconFont> : void 0; // 
       return (
         <Menu.SubMenu key={data.key} icon={icon} title={this.getLabel(data.name)}>
-          {/* <span>{data.key}</span> */}
           {
             _.map(data.children, (item: routers.MenuData) => {
               return this.getSubMenuItem(item, index);
@@ -69,9 +70,6 @@ class Sider extends React.Component<Props, any> {
     }
   }
   private getSelectKeys(): menuData {
-    // const location = useLocation();
-    // console.log(window.location.hash.replace('#', ''));
-
     const obj = {
       selectedKeys: [window.location.hash.replace('#', '')],
       openKeys: []
@@ -89,7 +87,6 @@ class Sider extends React.Component<Props, any> {
   }
   render() {
     const state = this.getSelectKeys();
-    console.log('state', state);
 
     return (<Menu mode="inline" defaultSelectedKeys={state.selectedKeys} defaultOpenKeys={state.openKeys} inlineCollapsed={false}>
       {

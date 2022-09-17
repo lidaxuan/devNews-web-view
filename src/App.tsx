@@ -4,7 +4,7 @@
  * @Date: 2022-09-09 20:49:06
  * @FilePath: /devNews-web-view/src/App.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 17:20:53
+ * @LastEditTime: 2022-09-17 18:12:02
  */
 import Application from 'src/layouts/index';
 import React, { FC } from 'react';
@@ -18,28 +18,25 @@ import './styles/layouts.scss';
 import 'src/styles/base.scss';
 
 
-// const App: FC = () => (
-//   // <BrowserRouter>
-//   <ConfigProvider locale={zhCN}>
-//     <div className="App">
-//       <Application></Application>
+const App: FC = () => (
+  <ConfigProvider locale={zhCN}>
+    <HashRouter>
+      <Application></Application>
+    </HashRouter>
+  </ConfigProvider>
+);
+export default App;
 
-//     </div >
-//   </ConfigProvider>
-//   // </BrowserRouter>
-// );
 
-// export default App;
 
-export default class App extends React.Component {
-  render(): React.ReactElement {
-    // 配置 antd 中文模式
-    return (
-      <ConfigProvider locale={zhCN}>
-        <HashRouter>
-          <Application></Application>
-        </HashRouter>
-      </ConfigProvider>
-    );
-  }
-}
+// export default class App extends React.Component {
+//   render(): React.ReactElement {
+//     return (
+//       <ConfigProvider locale={zhCN}>
+//         <HashRouter>
+//           <Application></Application>
+//         </HashRouter>
+//       </ConfigProvider>
+//     );
+//   }
+// }
