@@ -4,7 +4,7 @@
  * @Date: 2022-09-09 21:13:13
  * @FilePath: /devNews-web-view/src/layouts/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 14:54:28
+ * @LastEditTime: 2022-09-17 17:06:28
  */
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
@@ -12,7 +12,7 @@ import Routers from 'src/routers/index';
 import Side from './side';
 import { Route, HashRouter, BrowserRouter } from "react-router-dom";
 import React, {Children} from "react";
-import "../assets/style/layouts.scss";
+// import "../assets/style/layouts.scss";
 const { Header, Content, Sider } = Layout;
 
 
@@ -53,6 +53,7 @@ class Layouts extends React.Component<Props, State> {
       <Layout>
         <Header className="header">
           <div className="logo" />
+          李大玄
           {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} /> */}
         </Header>
         <Layout>

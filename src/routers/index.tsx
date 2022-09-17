@@ -4,7 +4,7 @@
  * @Date: 2022-09-14 14:26:59
  * @FilePath: /devNews-web-view/src/routers/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 15:14:52
+ * @LastEditTime: 2022-09-17 16:59:16
  */
 
 import React, { lazy, Suspense } from "react";
@@ -27,6 +27,7 @@ function RootRoute(): React.ReactElement {
               <Route path="/login" element={<Login />} />
               <Route path="/ad" element={<Login />} />
               <Route path="/" element={<Home />} />
+              <Route path="*" element={<Home />} />
               {/* </Route> */}
             </Routes>
           </Suspense>

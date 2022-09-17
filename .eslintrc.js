@@ -4,11 +4,7 @@
  * @Date: 2022-09-17 11:41:30
  * @FilePath: /devNews-web-view/.eslintrc.js
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 14:55:26
- */
-/**
- * @file eslint
- * @author svon.me@gmail.com
+ * @LastEditTime: 2022-09-17 17:42:58
  */
 
 module.exports = {
@@ -50,61 +46,24 @@ module.exports = {
   "rules": {
     "jsx-quotes": ["error", "prefer-double"],
     "no-console": "off",
-    "semi": [
-      "error",
-      "always"
-    ],
+    "semi": ["error", "always"],
     "indent": ["off"],
-    "space-infix-ops": [
-      "error"
-    ],
-    "multiline-ternary": [
-      "error",
-      "never"
-    ],
-    "no-multi-assign": [
-      "error"
-    ],
-    "no-duplicate-imports": [
-      "error"
-    ],
-    "no-eval": [
-      "error"
-    ],
-    "eqeqeq": [
-      "error",
-      "smart"
-    ],
-    "no-obj-calls": [
-      "error"
-    ],
-    "no-empty": [
-      "error"
-    ],
-    "no-duplicate-case": [
-      "error"
-    ],
-    "no-dupe-args": [
-      "error"
-    ],
-    "semi-style": [
-      "error",
-      "last"
-    ],
-    "no-delete-var": [
-      "error"
-    ],
-    "no-shadow": [
-      "error"
-    ],
-    "no-cond-assign": [
-      "error",
-      "always"
-    ],
-    "comma-dangle": [
-      "error",
-      "only-multiline"
-    ],
+    "space-infix-ops": ["error"],
+    "multiline-ternary": ["error", "never"],
+    "no-multi-assign": ["error"],
+    "no-duplicate-imports": ["error"],
+    "no-eval": ["error"],
+    // "eqeqeq": ["warn", "smart"],
+    "eqeqeq": ["off"],
+    "no-obj-calls": ["error"],
+    "no-empty": ["error"],
+    "no-duplicate-case": ["error"],
+    "no-dupe-args": ["error"],
+    "semi-style": ["warn", "last"],
+    "no-delete-var": ["error"],
+    "no-shadow": ["error"],
+    "no-cond-assign": ["error", "always"],
+    "comma-dangle": ["error", "only-multiline"],
     "no-unused-vars": ["off"],
     "@typescript-eslint/no-unused-vars": ["off"],
     "@typescript-eslint/no-explicit-any": ["off"],

@@ -4,13 +4,8 @@
  * @Date: 2022-09-14 14:29:54
  * @FilePath: /devNews-web-view/src/utils/async.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-14 14:29:54
+ * @LastEditTime: 2022-09-17 17:10:57
  */
-/**
- * @file 异步组件
- * @author svon.me@gmail.com
- */
-
 import React, { Component } from 'react';
 
 interface State {

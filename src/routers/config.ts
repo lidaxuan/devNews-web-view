@@ -64,52 +64,56 @@ export interface routerItem {
 export const routerMenus = [
   {
     name: '首页',
+    icon: 'icon-qian',
     key: 'home', // 通过 key 可以从 routers 获取 path 路径
     path: '/', // 通过 key 可以从 routers 获取 path 路径
   },
   {
     name: '测试',
     key: 'demo',
+    icon: 'icon-qian',
     children: [
-      { name: '测试1', path: '/ad', key: 'ad' },
-      { name: '测试2', path: '/demo2', key: 'demo.2' },
-      { name: '测试3', path: '/demo3', key: 'demo.3' }
+      { name: '测试1', path: '/ad', key: 'ad', icon: 'icon-qian' },
+      { name: '测试2', path: '/demo2', key: 'demo.2', icon: 'icon-qian' },
+      { name: '测试3', path: '/demo3', key: 'demo.3', icon: 'icon-qian' }
     ]
   },
-  // {
-  //   name: '商品管理',
-  //   key: 'goods',
-  //   icon: 'icongoods',
-  //   children: [
-  //     {
-  //       name: '商品列表',
-  //       key: 'goods.list',
-  //       children: [
-  //         { name: '添加商品', hidden: true, key: 'goods.create', },
-  //         { name: '编辑商品', hidden: true, key: 'goods.edit', }
-  //       ]
-  //     },
-  //   ]
-  // },
-  // {
-  //   name: '订单管理',
-  //   key: 'order',
-  //   icon: 'iconorder',
-  //   children: [
-  //     {
-  //       name: '订单列表',
-  //       key: 'order.list',
-  //       children: [
-  //         // 订单列表中的订单详情
-  //         { name: '订单详情', hidden: true, key: 'order.info', },
-  //         { name: '订单详情', hidden: true, key: 'order.service.detail', },
-  //         { name: '申请详情', hidden: true, key: 'order.service.apply', },
-  //         { name: '审核处理', hidden: true, key: 'order.service.audit', },
-  //         { name: '退款处理', hidden: true, key: 'order.service.refund', },
-  //       ]
-  //     },
+  {
+    name: '商品管理',
+    key: 'goods',
+    path: '/goods',
+    icon: 'icongoods',
+    children: [
+      {
+        name: '商品列表',
+        key: 'goods.list',
+        path: '/goods.list',
+        children: [
+          { name: '添加商品', hidden: true, key: 'goods.create' },
+          { name: '编辑商品', hidden: true, key: 'goods.edit' }
+        ]
+      },
+    ]
+  },
+  {
+    name: '订单管理',
+    key: 'order',
+    icon: 'iconorder',
+    children: [
+      {
+        name: '订单列表',
+        key: 'order.list',
+        children: [
+          // 订单列表中的订单详情
+          { name: '订单详情', hidden: true, key: 'order.info' },
+          { name: '订单详情', hidden: true, key: 'order.service.detail' },
+          { name: '申请详情', hidden: true, key: 'order.service.apply' },
+          { name: '审核处理', hidden: true, key: 'order.service.audit' },
+          { name: '退款处理', hidden: true, key: 'order.service.refund' },
+        ]
+      },
 
-  //   ]
-  // },
+    ]
+  },
 
 ];

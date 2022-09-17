@@ -1,6 +1,10 @@
-/**
- * @file 公共样式
- * @author svon.me@gmail.com
+/*
+ * @Description: 
+ * @Author: 李大玄
+ * @Date: 2022-09-17 14:01:03
+ * @FilePath: /devNews-web-view/src/styles/base.scss
+ * @LastEditors: 李大玄
+ * @LastEditTime: 2022-09-17 17:20:43
  */
 
 @import "./color.scss";
@@ -23,7 +27,7 @@
   vertical-align: middle;
 }
 
- /*
+/*
   ml5, ml10... ml50
   ml6, ml8, ml10, ml12
 */
@@ -101,7 +105,6 @@
   }
 }
 
-
 /* 灰色背景 */
 .background-gray {
   background-color: $background;
@@ -111,14 +114,14 @@
   border: 1px solid #d1d1d1;
 }
 
-.line{
+.line {
   margin-bottom: 20px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
   padding-bottom: 20px;
   font-size: 18px;
 }
-.goodsImg{
+.goodsImg {
   width: 120px;
   height: 120px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }

@@ -4,7 +4,7 @@
  * @Date: 2022-09-16 16:01:59
  * @FilePath: /devNews-web-view/src/layouts/router.ts
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 15:00:54
+ * @LastEditTime: 2022-09-17 15:32:48
  */
 
 import _ from 'lodash';
@@ -31,7 +31,7 @@ export class Router<Props, State> extends React.Component<Props, State> {
   }
   protected getKeyToPathName(key: string): string {
     // return safeGet<string>(config.routers, key);
-    return ''
+    return 'a';
   }
   // 根据 key 获取数据
   protected getSelectKeys(key: string): MenuSelected {
