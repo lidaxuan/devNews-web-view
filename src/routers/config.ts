@@ -64,15 +64,16 @@ export interface routerItem {
 export const routerMenus = [
   {
     name: '首页',
-    key: '/', // 通过 key 可以从 routers 获取 path 路径
+    key: 'home', // 通过 key 可以从 routers 获取 path 路径
+    path: '/', // 通过 key 可以从 routers 获取 path 路径
   },
   {
     name: '测试',
     key: 'demo',
     children: [
-      { name: '测试1', key: 'ad', },
-      { name: '测试2', key: 'demo.2', },
-      { name: '测试3', key: 'demo.3', }
+      { name: '测试1', path: '/ad', key: 'ad' },
+      { name: '测试2', path: '/demo2', key: 'demo.2' },
+      { name: '测试3', path: '/demo3', key: 'demo.3' }
     ]
   },
   // {

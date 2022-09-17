@@ -4,7 +4,7 @@
  * @Date: 2022-09-16 16:01:59
  * @FilePath: /devNews-web-view/src/layouts/router.ts
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-16 16:10:24
+ * @LastEditTime: 2022-09-17 15:00:54
  */
 
 import _ from 'lodash';
@@ -70,7 +70,7 @@ export class Router<Props, State> extends React.Component<Props, State> {
   // 根据路由 path 获取路由 key
   protected pathnameToKey(pathname: string): string {
     let key = this.curPathNameKey(pathname);
-    const item = {hidden: ''} //this.db.selectOne<MenuData>({ key });
+    const item = { hidden: '' } //this.db.selectOne<MenuData>({ key });
     // 如果该页面没有对应的菜单
     if (item && item.hidden) {
       // 返回父级菜单

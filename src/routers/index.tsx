@@ -4,31 +4,35 @@
  * @Date: 2022-09-14 14:26:59
  * @FilePath: /devNews-web-view/src/routers/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 09:52:45
+ * @LastEditTime: 2022-09-17 15:14:52
  */
 
+import React, { lazy, Suspense } from "react";
 import Application from '../layouts/index';
-import { Switch } from "react-router-dom";
-import { Routes, Route, Router, } from 'react-router';
-import { lazy } from "react";
-import React from "react";
+import { Switch, HashRouter, BrowserRouter } from "react-router-dom";
+import { Routes, Route, Router } from 'react-router';
+import asnyc from 'src/utils/async';
+const Home = lazy(() => import("src/pages/test/in"));
+const Login = lazy(() => import("src/pages/test/classify/clock"));
 
-const Home = lazy(() => import("src/pages/test/in"))
-const Login = lazy(() => import("src/pages/test/classify/clock"))
-
-function RootRoute(): JSX.Element {
+function RootRoute(): React.ReactElement {
   return (
-    <Switch>
-      <Router location={'/'} navigator={undefined} >
-        <Routes >
-          {/* <Route element={<Application />}> */}
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/ad" element={<Login />} />
-          {/* </Route> */}
-        </Routes>
-      </Router >
-    </Switch>
+    <HashRouter>
+      <Switch>
+        <Router location={'/'} navigator={undefined} >
+
+          <Suspense fallback={<h2>Loading..</h2>}>
+            <Routes >
+              {/* <Route path="/" element={<Application />}> */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/ad" element={<Login />} />
+              <Route path="/" element={<Home />} />
+              {/* </Route> */}
+            </Routes>
+          </Suspense>
+        </Router >
+      </Switch >
+    </HashRouter >
   );
 }
-export default RootRoute
+export default RootRoute;
