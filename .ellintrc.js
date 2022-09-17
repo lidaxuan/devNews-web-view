@@ -1,10 +1,6 @@
-/**
- * @file eslint
- * @author svon.me@gmail.com
- */
 
 module.exports = {
-    "root": true,
+    "root": false,
     "env": {
         "browser": true,
         "es6": true,
@@ -100,8 +96,8 @@ module.exports = {
             "error",
             "only-multiline"
         ],
-        "no-unused-vars": ["off"],
-        "@typescript-eslint/no-unused-vars": ["off"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/no-explicit-any": ["off"],
         "@typescript-eslint/no-var-requires": ["off"],
         "@typescript-eslint/no-empty-interface": ["off"],

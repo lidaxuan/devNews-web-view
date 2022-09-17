@@ -44,3 +44,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+
+yarn config set ignore-engines true
+yarn add -D webpack webpack-cli webpack-dev-server
+npm i antd react-router react-router-dom redux react-redux redux-actions @types/redux-actions @types/react-router-dom @loadable/component axios loadash --save

@@ -4,17 +4,22 @@
  * @Date: 2022-09-09 20:49:06
  * @FilePath: /devNews-web-view/src/App.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-09 21:44:54
+ * @LastEditTime: 2022-09-17 09:28:32
  */
-import React, { FC } from 'react';
-import { Button } from 'antd';
-import './App.css';
 import Application from './layouts/index';
+import React, { FC } from 'react';
+import './App.css';
+
+import { Route, HashRouter, BrowserRouter } from "react-router-dom";
+
 
 const App: FC = () => (
   <div className="App">
-    <Application></Application>
+    <BrowserRouter>
+      <Application></Application>
+    </BrowserRouter >
   </div>
+
 );
 
 export default App;
