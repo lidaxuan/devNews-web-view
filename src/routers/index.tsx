@@ -4,14 +4,17 @@
  * @Date: 2022-09-14 14:26:59
  * @FilePath: /devNews-web-view/src/routers/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 16:59:16
+ * @LastEditTime: 2022-09-24 16:12:59
  */
 
 import React, { lazy, Suspense } from "react";
-import Application from '../layouts/index';
 import { Switch, HashRouter, BrowserRouter } from "react-router-dom";
 import { Routes, Route, Router } from 'react-router';
-import asnyc from 'src/utils/async';
+
+const Index = lazy(() => import("src/pages/index/index"));
+const Demo1 = lazy(() => import("src/pages/demo/demo1"));
+const Demo2 = lazy(() => import("src/pages/demo/demo2"));
+const Demo3 = lazy(() => import("src/pages/demo/demo3"));
 const Home = lazy(() => import("src/pages/test/in"));
 const Login = lazy(() => import("src/pages/test/classify/clock"));
 
@@ -26,7 +29,10 @@ function RootRoute(): React.ReactElement {
               {/* <Route path="/" element={<Application />}> */}
               <Route path="/login" element={<Login />} />
               <Route path="/ad" element={<Login />} />
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Index />} />
+              <Route path="/demo/1" element={<Demo1 />} />
+              <Route path="/demo/2" element={<Demo2 />} />
+              <Route path="/demo/3" element={<Demo3 />} />
               <Route path="*" element={<Home />} />
               {/* </Route> */}
             </Routes>

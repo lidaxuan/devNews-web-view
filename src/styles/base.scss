@@ -4,7 +4,7 @@
  * @Date: 2022-09-17 14:01:03
  * @FilePath: /devNews-web-view/src/styles/base.scss
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 17:20:43
+ * @LastEditTime: 2022-09-24 09:38:18
  */
 
 @import "./color.scss";
@@ -31,43 +31,29 @@
   ml5, ml10... ml50
   ml6, ml8, ml10, ml12
 */
-@each $list in (5, 10, 15, 20, 25, 30, 35, 40, 45, 50), (4, 6, 8, 12, 14, 16) {
-  @each $number in $list {
-    .m#{$number} {
-      margin: unit($number);
-    }
-    .ml#{$number} {
-      margin-left: unit($number);
-    }
 
-    .mt#{$number} {
-      margin-top: unit($number);
-    }
-
-    .mr#{$number} {
-      margin-right: unit($number);
-    }
-
-    .mb#{$number} {
-      margin-bottom: unit($number);
-    }
-    .p#{$number} {
-      padding: unit($number);
-    }
-    .pl#{$number} {
-      padding-left: unit($number);
-    }
-
-    .pt#{$number} {
-      padding-top: unit($number);
-    }
-
-    .pr#{$number} {
-      padding-right: unit($number);
-    }
-
-    .pb#{$number} {
-      padding-bottom: unit($number);
+$sides: (top, bottom, left, right);
+$spacing-types: (
+  m: margin,
+  p: padding,
+);
+@each $typeKey, $type in $spacing-types {
+  @for $size from 0 through 100 {
+    @each $side in $sides {
+      .#{$typeKey}#{str-slice($side, 0, 1)}-#{$size} {
+        #{$type}-#{$side}: #{$size}px !important;
+      }
+      .#{$typeKey}-#{$size} {
+        #{$type}-#{$side}: #{$size}px !important;
+      }
+      .#{$typeKey}lr-#{$size} {
+        #{$type}-left: #{$size}px !important;
+        #{$type}-right: #{$size}px !important;
+      }
+      .#{$typeKey}tb-#{$size} {
+        #{$type}-top: #{$size}px !important;
+        #{$type}-bottom: #{$size}px !important;
+      }
     }
   }
 }

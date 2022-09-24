@@ -4,7 +4,7 @@
  * @Date: 2022-09-17 11:41:30
  * @FilePath: /devNews-web-view/.eslintrc.js
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 17:42:58
+ * @LastEditTime: 2022-09-24 15:28:51
  */
 
 module.exports = {
@@ -50,7 +50,7 @@ module.exports = {
     "indent": ["off"],
     "space-infix-ops": ["error"],
     "multiline-ternary": ["error", "never"],
-    "no-multi-assign": ["error"],
+    "no-multi-assign": ["off"],
     "no-duplicate-imports": ["error"],
     "no-eval": ["error"],
     // "eqeqeq": ["warn", "smart"],
@@ -61,11 +61,15 @@ module.exports = {
     "no-dupe-args": ["error"],
     "semi-style": ["warn", "last"],
     "no-delete-var": ["error"],
-    "no-shadow": ["error"],
+    "no-shadow": ["off"],
     "no-cond-assign": ["error", "always"],
     "comma-dangle": ["error", "only-multiline"],
     "no-unused-vars": ["off"],
+    "react/prop-types": ["off"],
+    "@typescript-eslint/no-empty-functionahooks": ["off"],
+    "@typescript-eslint/no-empty-function": ["off"],
     "@typescript-eslint/no-unused-vars": ["off"],
+    "@typescript-eslint/no-this-alias": ["off"],
     "@typescript-eslint/no-explicit-any": ["off"],
     "@typescript-eslint/no-var-requires": ["off"],
     "@typescript-eslint/no-empty-interface": ["off"],

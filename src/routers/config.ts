@@ -69,13 +69,13 @@ export const routerMenus = [
     path: '/', // 通过 key 可以从 routers 获取 path 路径
   },
   {
-    name: '测试',
+    name: 'demo',
     key: 'demo',
     icon: 'icon-qian',
     children: [
-      { name: '测试1', path: '/ad', key: 'ad', icon: 'icon-qian' },
-      { name: '测试2', path: '/demo2', key: 'demo.2', icon: 'icon-qian' },
-      { name: '测试3', path: '/demo3', key: 'demo.3', icon: 'icon-qian' }
+      { name: 'demo1', path: '/demo/1', key: 'ad', icon: 'icon-qian' },
+      { name: 'demo2', path: '/demo/2', key: 'demo.2', icon: 'icon-qian' },
+      { name: 'demo3', path: '/demo/3', key: 'demo.3', icon: 'icon-qian' }
     ]
   },
   // {

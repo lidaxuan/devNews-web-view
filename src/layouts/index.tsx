@@ -4,18 +4,17 @@
  * @Date: 2022-09-09 21:13:13
  * @FilePath: /devNews-web-view/src/layouts/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 18:33:04
+ * @LastEditTime: 2022-09-24 11:04:20
  */
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu } from "antd";
+import { AutoComplete, Breadcrumb, Layout, Menu } from "antd";
 import Routers from 'src/routers/index';
 import Side from './side';
+import Header from './header';
 import { Route, HashRouter, BrowserRouter } from "react-router-dom";
 import { routerMenus } from 'src/routers/config';
 import React, { Children } from "react";
-import DB from '@lijixuan/dblist';
-import { log } from "console";
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 import _ from 'lodash';
 
 
@@ -79,10 +78,7 @@ class Layouts extends React.Component<Props, State> {
     const { breadcrumb } = this.state;
     return (
       <Layout>
-        <Header className="header">
-          <div className="logo" />
-          李大玄
-        </Header>
+        <Header />
         <Layout>
           <Sider width={200} className="site-layout-background">
             <Side getBreadcrumb={this.getBreadcrumb}></Side>
@@ -90,14 +86,14 @@ class Layouts extends React.Component<Props, State> {
           <Layout style={{ padding: "0 24px 24px" }}>
             <Breadcrumb style={{ margin: "16px 0" }}>
               {
-                _.map(breadcrumb, item => {
+                _.map(breadcrumb, (item, index) => {
                   return (
-                    <Breadcrumb.Item>{item.name}</Breadcrumb.Item>
+                    <Breadcrumb.Item key={index}>{item.name}</Breadcrumb.Item>
                   );
                 })
               }
             </Breadcrumb>
-            <Content className="site-layout-background" style={{ padding: 24, margin: 0, minHeight: 280 }}>
+            <Content className="site-layout-background " style={{ padding: 24, margin: 0, minHeight: 280, overflowY: 'auto' }}>
               <Routers></Routers>
             </Content>
           </Layout>
