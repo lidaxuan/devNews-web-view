@@ -4,17 +4,17 @@
  * @Date: 2022-09-16 16:01:01
  * @FilePath: /devNews-web-view/src/layouts/side.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 18:29:42
+ * @LastEditTime: 2022-09-24 16:24:17
  */
 
 import _ from 'lodash';
 import React from 'react';
 import { Menu } from 'antd';
-import * as routers from './router';
+// import * as routers from './router';
 import { useNavigate, useLocation, useParams } from 'react-router';
 import IconFont from 'src/components/icon/index';
 import { Route, HashRouter, BrowserRouter, useHistory, Link } from "react-router-dom";
-import { routerMenus } from 'src/routers/config';
+import { routerMenus, routerItem } from 'src/routers/config';
 interface Props {
   fold?: boolean;
   getBreadcrumb: any,
@@ -26,6 +26,9 @@ interface menuData {
   [key: string]: any;
 }
 
+export interface MenuData extends routerItem {
+  [key: string]: any;
+}
 
 class Sider extends React.Component<Props, any> {
   constructor(props: any) {
@@ -42,7 +45,7 @@ class Sider extends React.Component<Props, any> {
   private getName(text: string): React.ReactNode {
     return (<span className="font-14">{text}</span>);
   }
-  private getSubMenuItem(data: routers.MenuData, index: number): React.ReactNode {
+  private getSubMenuItem(data: routerItem, index: number): React.ReactNode {
     const name = this.getName(data.name);
     const icon = data.icon ? <IconFont className="font-24 middle" type={data.icon}></IconFont> : void 0; // 
     return (
@@ -53,13 +56,13 @@ class Sider extends React.Component<Props, any> {
       </Menu.Item >
     );
   }
-  private getSubMenu(data: routers.MenuData, index: number): React.ReactNode {
+  private getSubMenu(data: routerItem, index: number): React.ReactNode {
     if (data.children && data.children.length > 0) {
       const icon = data.icon ? <IconFont className="font-24 middle" type={data.icon}></IconFont> : void 0; // 
       return (
         <Menu.SubMenu key={data.key} icon={icon} title={this.getLabel(data.name)}>
           {
-            _.map(data.children, (item: routers.MenuData) => {
+            _.map(data.children, (item: routerItem) => {
               return this.getSubMenuItem(item, index);
             })
           }
@@ -90,7 +93,7 @@ class Sider extends React.Component<Props, any> {
 
     return (<Menu mode="inline" defaultSelectedKeys={state.selectedKeys} defaultOpenKeys={state.openKeys} inlineCollapsed={false}>
       {
-        _.map(routerMenus, (item: routers.MenuData, index: number) => {
+        _.map(routerMenus, (item: routerItem, index: number) => {
           return this.getSubMenu(item, index);
         })
       }

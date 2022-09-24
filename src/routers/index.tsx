@@ -4,7 +4,7 @@
  * @Date: 2022-09-14 14:26:59
  * @FilePath: /devNews-web-view/src/routers/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 16:12:59
+ * @LastEditTime: 2022-09-24 16:28:03
  */
 
 import React, { lazy, Suspense } from "react";
@@ -27,13 +27,13 @@ function RootRoute(): React.ReactElement {
           <Suspense fallback={<h2>Loading..</h2>}>
             <Routes >
               {/* <Route path="/" element={<Application />}> */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/ad" element={<Login />} />
               <Route path="/" element={<Index />} />
               <Route path="/demo/1" element={<Demo1 />} />
               <Route path="/demo/2" element={<Demo2 />} />
               <Route path="/demo/3" element={<Demo3 />} />
-              <Route path="*" element={<Home />} />
+              <Route path="/article/list" element={<Demo3 />} />
+              <Route path="/article/create" element={<Demo3 />} />
+              <Route path="*" element={<div>404</div>} />
               {/* </Route> */}
             </Routes>
           </Suspense>
