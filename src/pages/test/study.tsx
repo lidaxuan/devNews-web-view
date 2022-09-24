@@ -4,12 +4,12 @@
  * @Date: 2022-09-14 14:31:03
  * @FilePath: /devNews-web-view/src/pages/test/study.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-16 15:40:50
+ * @LastEditTime: 2022-09-24 17:08:20
  */
 import React, { Component } from 'react';
 import { Menu, Form, Input, Select, Button, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
 
-enum statusEnum {}
+enum statusEnum { }
 // 参数接收
 interface Props {
   [key: string]: any
@@ -40,10 +40,10 @@ export default class Scroll extends Component<Props, State>  {
   }
   // 将要装载，在render之前调用；
   UNSAFE_componentWillMount() {
-    
+
   }
   // (装载完成），在render之后调用 建议请求接口
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.initPage();
   }
   initPage() {
@@ -51,8 +51,8 @@ export default class Scroll extends Component<Props, State>  {
   }
 
   render() {
-    const {tableList} = this.state;
-    return(
+    const { tableList } = this.state;
+    return (
       <div>
         234
       </div>

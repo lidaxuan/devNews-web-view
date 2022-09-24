@@ -10,7 +10,7 @@ import { UploadProps } from 'antd/lib/upload';
 import { DeleteTwoTone, PlusOutlined } from '@ant-design/icons';
 // import { uploadFile } from 'src/model/common';
 
-function uploadFile(str:string) {return 'asd'  }
+function uploadFile(str: string) { return 'asd'; }
 interface Props extends UploadProps {
   value?: string;
   onChange?: (e: any) => void;

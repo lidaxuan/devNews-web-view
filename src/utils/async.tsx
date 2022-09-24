@@ -4,7 +4,7 @@
  * @Date: 2022-09-14 14:29:54
  * @FilePath: /devNews-web-view/src/utils/async.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-17 17:10:57
+ * @LastEditTime: 2022-09-24 17:08:33
  */
 import React, { Component } from 'react';
 
@@ -24,7 +24,7 @@ export default function asyncComponent(importComponent: any) {
         component: null
       };
     }
-    async componentDidMount() {
+    async UNSAFE_componentDidMount() {
       // 异步加载组件
       const result = await importComponent();
       if (result.default) {

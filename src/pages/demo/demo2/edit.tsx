@@ -4,7 +4,7 @@
  * @Date: 2022-09-24 14:57:13
  * @FilePath: /devNews-web-view/src/pages/demo/demo2/edit.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 16:00:47
+ * @LastEditTime: 2022-09-24 17:08:09
  */
 import React, { Component } from 'react';
 import { Menu, Form, Input, Select, Button, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
@@ -40,7 +40,7 @@ export default class Edit extends Basis<Props, State>  {
   }
 
   // (装载完成），在render之后调用 建议请求接口
-  async componentDidMount() {
+  async UNSAFE_componentDidMount() {
     const data = await this.getDetail<State>();
     if (this.formRef) {
       const { current } = this.formRef;

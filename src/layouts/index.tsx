@@ -4,7 +4,7 @@
  * @Date: 2022-09-09 21:13:13
  * @FilePath: /devNews-web-view/src/layouts/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 11:04:20
+ * @LastEditTime: 2022-09-24 17:07:57
  */
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from "@ant-design/icons";
 import { AutoComplete, Breadcrumb, Layout, Menu } from "antd";
@@ -71,7 +71,7 @@ class Layouts extends React.Component<Props, State> {
       breadcrumb: list
     });
   }
-  componentDidMount(): void {
+  UNSAFE_componentDidMount(): void {
     this.getBreadcrumb();
   }
   render(): React.ReactElement {

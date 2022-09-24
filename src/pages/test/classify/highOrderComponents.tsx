@@ -2,7 +2,7 @@
  * @Description: 高阶组件
  * @Author: 李继玄（15201002062@163.com）
  * @Date: 2021-01-27 11:28:15
- * @FilePath: /react-ts/src/pages/test/classify/highOrderComponents.tsx
+ * @FilePath: /devNews-web-view/src/pages/test/classify/highOrderComponents.tsx
  */
 
 import React, { Component } from 'react';
@@ -20,7 +20,7 @@ const Hoc = (Comp) => {//参数首字母必须大写，必须要有返回值，�
       super(props);
       this.banner = this.banner.bind(this);
     }
-    banner(){//这里是实现某个功能的函数代码
+    banner() {//这里是实现某个功能的函数代码
       return 'zhangyue';
     }
     render() {
@@ -34,16 +34,16 @@ class A extends Component<State, Props> {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     const { banner } = this.props as any;
     console.log(banner());
-    
+
   }
   render() {
     return (
       <div>
         <p> A组件 </p>
-        { this.props.banner() } 
+        {this.props.banner()}
         {/* //在下面使用了高阶组件后，这里就可以直接使用里面的方法了 */}
       </div>
     );
@@ -55,7 +55,7 @@ class B extends Component<State, Props> {
     return (
       <div>
         <p> B组件 </p>
-        { this.props.banner()}
+        {this.props.banner()}
       </div>
     );
   }
@@ -70,11 +70,11 @@ class C extends Component {
     return (
       <div>
         <p> C组件 </p>
-        <HocA></HocA> 
+        <HocA></HocA>
         {/* //这里使用的高阶组件 */}
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
         <HocB></HocB>
       </div>
     );

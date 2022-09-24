@@ -4,7 +4,7 @@
  * @Date: 2022-09-16 16:01:01
  * @FilePath: /devNews-web-view/src/layouts/side.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 16:24:17
+ * @LastEditTime: 2022-09-24 16:57:50
  */
 
 import _ from 'lodash';
@@ -91,7 +91,7 @@ class Sider extends React.Component<Props, any> {
   render() {
     const state = this.getSelectKeys();
 
-    return (<Menu mode="inline" defaultSelectedKeys={state.selectedKeys} defaultOpenKeys={state.openKeys} inlineCollapsed={false}>
+    return (<Menu mode="inline" defaultSelectedKeys={state.selectedKeys} defaultOpenKeys={state.openKeys}>
       {
         _.map(routerMenus, (item: routerItem, index: number) => {
           return this.getSubMenu(item, index);

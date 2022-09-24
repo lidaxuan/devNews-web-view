@@ -4,7 +4,7 @@
  * @Date: 2022-09-24 14:56:02
  * @FilePath: /devNews-web-view/src/pages/demo/demo2/common/basis.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 16:02:13
+ * @LastEditTime: 2022-09-24 17:08:12
  */
 import React, { Component } from 'react';
 import { Menu, Form, Input, Select, Button, InputNumber, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
@@ -38,7 +38,7 @@ export default abstract class FormBasis<Props extends BasisProps, State extends 
   }
 
   // (装载完成），在render之后调用 建议请求接口
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     //todo
   }
   abstract getTitle(): React.ReactNode;

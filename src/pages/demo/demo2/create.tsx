@@ -4,7 +4,7 @@
  * @Date: 2022-09-24 14:56:57
  * @FilePath: /devNews-web-view/src/pages/demo/demo2/create.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 16:02:33
+ * @LastEditTime: 2022-09-24 17:08:06
  */
 import React, { Component } from 'react';
 import { Menu, Form, Input, Select, Button, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
@@ -39,7 +39,7 @@ export default class Create extends Basis<Props, State>  {
   }
 
   // (装载完成），在render之后调用 建议请求接口
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     // todo
   }
   getTitle(): React.ReactElement {
@@ -47,6 +47,6 @@ export default class Create extends Basis<Props, State>  {
   }
   onFinish(data: State) {
     console.log(data);
-    
+
   }
 }

@@ -4,7 +4,7 @@
  * @Date: 2022-09-14 14:26:59
  * @FilePath: /devNews-web-view/src/routers/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 16:28:03
+ * @LastEditTime: 2022-09-24 17:24:22
  */
 
 import React, { lazy, Suspense } from "react";
@@ -15,8 +15,9 @@ const Index = lazy(() => import("src/pages/index/index"));
 const Demo1 = lazy(() => import("src/pages/demo/demo1"));
 const Demo2 = lazy(() => import("src/pages/demo/demo2"));
 const Demo3 = lazy(() => import("src/pages/demo/demo3"));
-const Home = lazy(() => import("src/pages/test/in"));
-const Login = lazy(() => import("src/pages/test/classify/clock"));
+const ArticleList = lazy(() => import("src/pages/article/articleList"));
+const CreateArticle = lazy(() => import("src/pages/article/createArticle"));
+
 
 function RootRoute(): React.ReactElement {
   return (
@@ -31,8 +32,8 @@ function RootRoute(): React.ReactElement {
               <Route path="/demo/1" element={<Demo1 />} />
               <Route path="/demo/2" element={<Demo2 />} />
               <Route path="/demo/3" element={<Demo3 />} />
-              <Route path="/article/list" element={<Demo3 />} />
-              <Route path="/article/create" element={<Demo3 />} />
+              <Route path="/article/list" element={<ArticleList />} />
+              <Route path="/article/create" element={<CreateArticle />} />
               <Route path="*" element={<div>404</div>} />
               {/* </Route> */}
             </Routes>

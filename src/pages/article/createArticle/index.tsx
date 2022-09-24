@@ -1,15 +1,15 @@
 /*
  * @Description: 
  * @Author: 李大玄
- * @Date: 2022-09-14 14:31:15
- * @FilePath: /devNews-web-view/src/pages/goods/index.tsx
+ * @Date: 2022-09-24 17:24:03
+ * @FilePath: /devNews-web-view/src/pages/article/createArticle/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-14 15:04:57
+ * @LastEditTime: 2022-09-24 17:24:04
  */
+
 import React, { Component } from 'react';
 import { Menu, Form, Input, Select, Button, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
-
-enum statusEnum {}
+import Editor from 'src/components/editor';
 // 参数接收
 interface Props {
   [key: string]: any
@@ -26,7 +26,7 @@ interface State {
   [key: string]: any;
 }
 
-export default class Scroll extends Component<Props, State>  {
+export default class ArticleList extends Component<Props, State>  {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -40,21 +40,21 @@ export default class Scroll extends Component<Props, State>  {
   }
   // 将要装载，在render之前调用；
   UNSAFE_componentWillMount() {
-    
+    // todo
   }
   // (装载完成），在render之后调用 建议请求接口
-  componentDidMount() {
-    this.initPage();
+  UNSAFE_componentDidMount() {
+    // todo
   }
   initPage() {
     console.log(1111);
   }
 
   render() {
-    const {tableList} = this.state;
-    return(
+    const { tableList } = this.state;
+    return (
       <div>
-        123
+        <Editor></Editor>
       </div>
     );
   }

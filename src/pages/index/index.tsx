@@ -4,7 +4,7 @@
  * @Date: 2022-09-24 10:34:06
  * @FilePath: /devNews-web-view/src/pages/index/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 11:04:51
+ * @LastEditTime: 2022-09-24 17:08:15
  */
 import React, { Component } from 'react';
 import { Menu, Form, Input, Select, Button, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
@@ -30,7 +30,7 @@ interface State {
   [key: string]: any;
 }
 
-export default class Scroll extends Component<Props, State>  {
+export default class Chartspage extends Component<Props, State>  {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -47,9 +47,7 @@ export default class Scroll extends Component<Props, State>  {
     // todo
   }
   // (装载完成），在render之后调用 建议请求接口
-  componentDidMount() {
-    this.initPage();
-  }
+  UNSAFE_componentDidMount() { }
   initPage() {
     console.log(1111);
   }

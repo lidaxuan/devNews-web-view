@@ -4,7 +4,7 @@
  * @Date: 2022-09-24 09:25:20
  * @FilePath: /devNews-web-view/src/layouts/header.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 10:29:44
+ * @LastEditTime: 2022-09-24 17:07:54
  */
 import React, { Component } from 'react';
 import { Layout } from 'antd';
@@ -48,11 +48,11 @@ export default class Scroll extends Component<Props, State>  {
   // }
   // screenfull.toggle();
   // (装载完成），在render之后调用 建议请求接口
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.initPage();
   }
   initPage() {
-    console.log(1111);
+    // todo
   }
   fullScreenBtn() {
     if (screenfull.isEnabled) {
@@ -78,7 +78,7 @@ export default class Scroll extends Component<Props, State>  {
             <div title="全屏按钮" onClick={this.fullScreenBtn} className="mr-15">
               {fullScreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
             </div>
-            <LoginOutlined className="pointer"/>
+            <LoginOutlined className="pointer" />
           </div>
         </Header>
       </div>

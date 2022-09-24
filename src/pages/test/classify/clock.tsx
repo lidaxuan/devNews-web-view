@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 李继玄（15201002062@163.com）
  * @Date: 2021-01-27 10:13:44
- * @FilePath: /react-ts/src/pages/test/classify/clock.tsx
+ * @FilePath: /devNews-web-view/src/pages/test/classify/clock.tsx
  */
 import React from 'react';
 
@@ -15,7 +15,7 @@ export default class Clock extends React.Component<any, any> {
     };
     this.tick = this.tick.bind(this);
   }
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
       1000

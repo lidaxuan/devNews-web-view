@@ -4,7 +4,7 @@
  * @Date: 2022-09-24 11:11:36
  * @FilePath: /devNews-web-view/src/pages/demo/demo1.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 11:31:54
+ * @LastEditTime: 2022-09-24 17:08:03
  */
 import React, { Component } from 'react';
 import { Slider, Menu, Form, Input, Select, Button, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
@@ -47,7 +47,7 @@ export default class Scroll extends Component<Props, State>  {
     // todo
   }
   // (装载完成），在render之后调用 建议请求接口
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.initPage();
   }
   initPage() {
