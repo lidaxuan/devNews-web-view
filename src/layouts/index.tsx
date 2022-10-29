@@ -4,10 +4,11 @@
  * @Date: 2022-09-09 21:13:13
  * @FilePath: /devNews-web-view/src/layouts/index.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 17:07:57
+ * @LastEditTime: 2022-10-29 16:47:23
  */
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from "@ant-design/icons";
 import { AutoComplete, Breadcrumb, Layout, Menu } from "antd";
+// import store from '../store';
 import Routers from 'src/routers/index';
 import Side from './side';
 import Header from './header';
@@ -16,7 +17,8 @@ import { routerMenus } from 'src/routers/config';
 import React, { Children } from "react";
 const { Content, Sider } = Layout;
 import _ from 'lodash';
-
+import Login from '../pages/login';
+import { getUserInfo } from '../store';
 
 interface Props {
   children?: React.ReactElement | Array<React.ReactElement>;
@@ -76,6 +78,15 @@ class Layouts extends React.Component<Props, State> {
   }
   render(): React.ReactElement {
     const { breadcrumb } = this.state;
+    console.log('getUserInfo()-----------', getUserInfo());
+
+    const userInfo = getUserInfo() as any;
+    if (!userInfo.token) {
+      window.location.hash = '/login';
+      return (
+        <Login></Login>
+      );
+    }
     return (
       <Layout>
         <Header />

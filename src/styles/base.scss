@@ -4,13 +4,12 @@
  * @Date: 2022-09-17 14:01:03
  * @FilePath: /devNews-web-view/src/styles/base.scss
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 09:38:18
+ * @LastEditTime: 2022-10-29 14:51:12
  */
 
 @import "./color.scss";
 @import "./flex.scss";
 @import "./font.scss";
-@import "./width.scss";
 
 * {
   margin: 0;
@@ -31,7 +30,6 @@
   ml5, ml10... ml50
   ml6, ml8, ml10, ml12
 */
-
 $sides: (top, bottom, left, right);
 $spacing-types: (
   m: margin,
@@ -58,6 +56,44 @@ $spacing-types: (
   }
 }
 
+@for $brSize from 0 through 50 {
+  .br-#{$brSize} {
+    border-radius: #{$brSize}px;
+  }
+}
+
+//宽度高度100%
+@each $hSize in (height, width) {
+  [#{$hSize}="100%"] {
+    #{$hSize}: 100%;
+  }
+}
+@for $size from 1 through 700 {
+  @each $sizeKey in $size {
+    .w-#{$sizeKey} {
+      width: #{$sizeKey}px !important;
+    }
+    .min-w-#{$sizeKey} {
+      min-width: #{$sizeKey}px !important;
+    }
+    .max-w-#{$sizeKey} {
+      max-width: #{$sizeKey}px !important;
+    }
+    .h-#{$sizeKey} {
+      height: #{$sizeKey}px !important;
+    }
+    .min-h-#{$sizeKey} {
+      min-height: #{$sizeKey}px !important;
+    }
+    .max-h-#{$sizeKey} {
+      max-height: #{$sizeKey}px !important;
+    }
+    .lh-#{$sizeKey} {
+      line-height: #{$sizeKey}px !important;
+    }
+  }
+}
+
 .dbk {
   display: block;
 }
@@ -78,36 +114,4 @@ $spacing-types: (
 
 .t-a-c {
   text-align: center;
-}
-
-.upload-box {
-  position: relative;
-  .upload-remove {
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translateY(-50%);
-    cursor: pointer;
-  }
-}
-
-/* 灰色背景 */
-.background-gray {
-  background-color: $background;
-}
-
-.border {
-  border: 1px solid #d1d1d1;
-}
-
-.line {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #dddddd;
-  padding-bottom: 20px;
-  font-size: 18px;
-}
-.goodsImg {
-  width: 120px;
-  height: 120px;
-  border: 1px solid #dddddd;
 }

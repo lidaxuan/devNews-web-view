@@ -4,7 +4,7 @@
  * @Date: 2022-09-24 14:56:02
  * @FilePath: /devNews-web-view/src/pages/demo/demo2/common/basis.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 17:08:12
+ * @LastEditTime: 2022-09-24 17:48:25
  */
 import React, { Component } from 'react';
 import { Menu, Form, Input, Select, Button, InputNumber, Table, Switch, Popover, Pagination, Modal, message, DatePicker, Tag, Space } from 'antd';
@@ -71,6 +71,7 @@ export default abstract class FormBasis<Props extends BasisProps, State extends 
       <Input placeholder={message} maxLength={length} suffix={suffix} />
     </Form.Item>);
   }
+
   protected getAgeView(): React.ReactNode {
     const key = 'age';
     const length = 32;
@@ -83,6 +84,7 @@ export default abstract class FormBasis<Props extends BasisProps, State extends 
       <InputNumber style={{ width: '100%' }} placeholder={message} maxLength={length} />
     </Form.Item>);
   }
+  
   protected getContent(): React.ReactNode {
     const props = {
       ...formProps,

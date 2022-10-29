@@ -4,14 +4,14 @@
  * @Date: 2022-09-24 09:25:20
  * @FilePath: /devNews-web-view/src/layouts/header.tsx
  * @LastEditors: 李大玄
- * @LastEditTime: 2022-09-24 17:07:54
+ * @LastEditTime: 2022-10-29 16:54:36
  */
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 const { Header, Content, Sider } = Layout;
 import { FullscreenOutlined, FullscreenExitOutlined, LoginOutlined } from '@ant-design/icons';
 import screenfull from 'screenfull';
-import { useBoolean } from 'ahooks';
+import { setUserInfo } from '../store';
 // 参数接收
 interface Props {
   [key: string]: any
@@ -41,6 +41,7 @@ export default class Scroll extends Component<Props, State>  {
     } as State;
     this.initPage = this.initPage.bind(this);
     this.fullScreenBtn = this.fullScreenBtn.bind(this);
+    this.logout = this.logout.bind(this);
   }
   // 将要装载，在render之前调用；
   // UNSAFE_componentWillMount() {
@@ -64,21 +65,27 @@ export default class Scroll extends Component<Props, State>  {
     });
   }
 
+  logout() {
+    setUserInfo();
+    window.location.hash = '/login';
+    history.go(0);
+  }
+
   render() {
     const { tableList, fullScreen } = this.state;
     return (
       <div>
-        <Header className="header flex flex-ccb">
+        <Header className="header flex jc-between">
           <div className="left">
             <div className="logo" />
             李大玄
 
           </div>
-          <div className="right flex flex-aic">
+          <div className="right flex ai-center">
             <div title="全屏按钮" onClick={this.fullScreenBtn} className="mr-15">
               {fullScreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
             </div>
-            <LoginOutlined className="pointer" />
+            <LoginOutlined onClick={this.logout} className="pointer" />
           </div>
         </Header>
       </div>
